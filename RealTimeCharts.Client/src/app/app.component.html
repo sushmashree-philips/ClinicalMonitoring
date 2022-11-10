@@ -1,0 +1,21 @@
+
+<div style="display: block" *ngIf='signalRService.data'>
+  <table class="table table-striped hover">
+    <tr>
+      <td>
+        Sl.No.
+      </td>
+      <td>
+        Name:
+      </td>
+      <td>
+        Age:
+      </td>
+    </tr>
+    <tr *ngFor='let data of signalRService.data;let i = index'>
+    <td>{{i+1}}</td>
+    <td> {{data.Name}} </td>
+    <td>{{data.Age}}</td>
+    </tr>
+  </table>
+</div>
