@@ -1,5 +1,5 @@
 
-<div style="display: block" *ngIf='signalRService.data'>
+<!-- <div style="display: block" *ngIf='signalRService.data'>
   <table class="table table-striped hover">
     <tr>
       <td>
@@ -18,4 +18,10 @@
     <td>{{data.Age}}</td>
     </tr>
   </table>
-</div>
+</div> -->
+
+<ng-container>
+  <a routerLink="procedure-progress">Display Progress</a>
+</ng-container>
+
+<router-outlet></router-outlet>
