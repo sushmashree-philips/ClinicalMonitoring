@@ -12,42 +12,40 @@ export class CountdownTimerComponent implements OnInit, OnDestroy, OnChanges {
 
   private subscription!: Subscription;
 
-  // public dateNow = new Date();
-  // public dDay = new Date();
-  public dDay: any
+  public completionTime: any
   milliSecondsInASecond = 1000;
   hoursInADay = 24;
   minutesInAnHour = 60;
   SecondsInAMinute = 60;
 
   public timeDifference: number | undefined;
-  public secondsToDday: number | undefined;
-  public minutesToDday: number | undefined;
-  public hoursToDday: number | undefined;
-  public daysToDday: number | undefined;
+  public secondsToCompletion: number | undefined;
+  public minutesToCompletion: number | undefined;
+  public hoursToCompletion: number | undefined;
+  public daysToCompletion: number | undefined;
 
   private getTimeDifference() {
-    const updtimeNow = this.dDay
+    const updtimeNow = this.completionTime
     this.timeDifference =updtimeNow - new Date().getTime();
     this.allocateTimeUnits(this.timeDifference);
   }
 
   private allocateTimeUnits(timeDifference: number) {
-    this.secondsToDday = Math.floor(
+    this.secondsToCompletion = Math.floor(
       (timeDifference / this.milliSecondsInASecond) % this.SecondsInAMinute
     );
-    this.minutesToDday = Math.floor(
+    this.minutesToCompletion = Math.floor(
       (timeDifference / (this.milliSecondsInASecond * this.minutesInAnHour)) %
         this.SecondsInAMinute
     );
-    this.hoursToDday = Math.floor(
+    this.hoursToCompletion = Math.floor(
       (timeDifference /
         (this.milliSecondsInASecond *
           this.minutesInAnHour *
           this.SecondsInAMinute)) %
         this.hoursInADay
     );
-    this.daysToDday = Math.floor(
+    this.daysToCompletion = Math.floor(
       timeDifference /
         (this.milliSecondsInASecond *
           this.minutesInAnHour *
@@ -57,8 +55,7 @@ export class CountdownTimerComponent implements OnInit, OnDestroy, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    console.log(this.timeleft)
-    this.dDay = this.timeleft
+    this.completionTime = this.timeleft
   }
 
   ngOnInit() {
