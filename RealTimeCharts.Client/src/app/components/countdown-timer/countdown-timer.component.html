@@ -1,10 +1,11 @@
-<div class="timer">
-  <!-- <span id="days"> {{ daysToDday }} </span>Day(s) -->
-  <span id="hours" *ngIf='hoursToCompletion >= 0'> {{ hoursToCompletion }} </span>Hrs
-  <span id="minutes" *ngIf='minutesToCompletion >= 0'> {{ minutesToCompletion }} </span>Min
-  <!-- <span id="seconds"> {{ secondsToDday }} </span>Sec -->
+<div class="timer" *ngIf='hoursToCompletion >= 0 && minutesToCompletion > 0'>
+  <!-- <span id="days"> {{ daysToCompletion }} </span>Day(s) -->
+  <span id="hours" *ngIf='hoursToCompletion > 0'> {{ hoursToCompletion }} Hrs </span>
+  <span id="minutes" *ngIf='minutesToCompletion > 0'> {{ minutesToCompletion }} Min left</span>
+  <!-- <span id="seconds"> {{ secondsToCompletion }} </span>Sec -->
+  <span> </span>
 </div>
 
-<!-- <ng-template #showComp>
-    Completed
-</ng-template> -->
+<ng-container *ngIf="minutesToCompletion == 0 && secondsToCompletion >= 58">
+    Procedure Completed
+</ng-container>

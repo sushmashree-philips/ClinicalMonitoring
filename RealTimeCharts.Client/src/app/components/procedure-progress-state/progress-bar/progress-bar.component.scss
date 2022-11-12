@@ -70,7 +70,7 @@
       text-transform: capitalize;
       font-size: 11px;
       display: inline-block;
-      margin-left: 5px;
+      margin-left: -10px;
       padding: 2px 10px;
       transform: translateY(6px);
       font-weight: 500;
@@ -78,6 +78,8 @@
       background: #eee;
       border-radius: 20px;
       transition: background-color 0.1s ease-in-out;
+      text-align: center;
+      width: 5.5rem;
     }
 
     span.progress-info.in-progress {
@@ -91,12 +93,13 @@
     }
 
     span.step {
-      margin-left: 10px;
+      margin-left: -10px;
       text-transform: uppercase;
       font-weight: normal;
       letter-spacing: 0.5px;
       font-size: 11px;
       color: #777;
+      text-align: center;
     }
   }
 
