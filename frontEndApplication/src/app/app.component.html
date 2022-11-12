@@ -1,0 +1,47 @@
+<mat-toolbar>
+
+  Clinical Saviours - Procedure details
+  </mat-toolbar>
+
+  <mat-sidenav-container>
+    <mat-sidenav mode="side" opened class="mat-elevation-z8">
+      <img class="avatar mat-elevation-z8" src="https://source.unsplash.com/c_GmwfHBDzk/200x200" />
+
+      <h4 class="name">Patient Name</h4>
+      <p class="designation">Type of issue</p>
+      <button mat-button (click)="onStart()" class="menu-button">
+          <mat-icon>person</mat-icon>
+          <span>Admin</span>
+      </button>
+      <button mat-button class="menu-button">
+          <mat-icon>people</mat-icon>
+          <span>Care-Taker</span>
+      </button>
+      <button mat-button class="menu-button">
+        <mat-icon>attachment</mat-icon>
+        <span>Reports</span>
+    </button>
+    <button mat-button class="menu-button">
+      <mat-icon>feedback</mat-icon>
+      <span>Feedback</span>
+  </button>
+      <button mat-button class="menu-button">
+          <mat-icon>info</mat-icon>
+          <span>About</span>
+      </button>
+
+
+      <mat-divider></mat-divider>
+
+      <button mat-button class="menu-button">
+          <mat-icon>help</mat-icon>
+          <span>Help</span>
+      </button>
+
+  </mat-sidenav>
+      <mat-sidenav-content>
+          <div class="content mat-elevation-z8">
+             {{message}}
+          </div>
+      </mat-sidenav-content>
+  </mat-sidenav-container>
