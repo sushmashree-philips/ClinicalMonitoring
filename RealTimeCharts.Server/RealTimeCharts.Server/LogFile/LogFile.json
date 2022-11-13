@@ -1,0 +1,22 @@
+{
+"Step_1":"Total time remaining 45 mints Preparation phase stared",
+"Step_2":"Patient moved to preparation room",
+"Step_3":"Enima/Contrast injection is in progress, patient is comfort and responding well with contrast",
+"Step_4":"Patient is coping with the procedure, process is going smooth",
+"Step_5":"Enima injection is completed. Patient is resting in pre-procedure looby. (may need 5 mints for the contrast to take effect)",
+"Step_6":"Scan will begin in few mints",
+"StartTest":" Testing Started",
+"ins_system_level_procedures:1268@p_ref_qbc_pow_cal_not_p10":"setup is ready scan is about to start",
+"Performance Logging [ScanExec] 0 event Scan starts":"Total number of exams to be completed as part of the scan = 3",
+"ExamCard state logging":"Fisrt exam started",
+"SCANEXEC  20%":"Scan is in progress",
+"ExamCard_state_logging_2":"Second exam started",
+"SCANEXEC  20%_2":"Scan is in progress",
+"ExamCard state logging_3":"Third exam started",
+"SCANEXEC,  20%_3":"Scan is in progress",
+"SCANEXEC, 60%":"Scan is in progress",
+"SCANEXEC, 80%":"Scan 80% is completed",
+"SCANEXEC, 100% or S_NOMEASPAR":"Scan is completed, Patient moving to post procedure room",
+"Step_7":"Offloading the contrast in progress, resting period =  5 mints",
+"Step_8":"Procedure completed, please wait for the patient in lobby"
+}

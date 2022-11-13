@@ -27,5 +27,13 @@ namespace RealTimeCharts.Server.Controllers
                 _timer.PrepareTimer(() => _hub.Clients.All.SendAsync("transferpatientData", DataManager.GetData()));
             return Ok(new { Message = "Request Completed" });
         }
+
+        [HttpGet("GetTestCase2")]
+        public IActionResult GetTestCase2()
+        {
+            if (!_timer.IsTimerStarted)
+                _timer.PrepareTimer(() => _hub.Clients.All.SendAsync("transferpatientData_2", TestCase_2_DataManager.GetData()));
+            return Ok(new { Message = "Request Completed" });
+        }
     }
 }
