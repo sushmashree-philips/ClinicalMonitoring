@@ -2,8 +2,8 @@
 {
     public class PatientData
     {
-       
-        public string? Name { get; set; }
-        public int Age { get; set; }
+
+        public string? Procedure { get; set; }
+        public string? ReaminingTime { get; set; }
     }
 }

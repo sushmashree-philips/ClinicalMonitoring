@@ -1,0 +1,6 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/RealTimeCharts.Server/RealTimeCharts.Server/obj
+/RealTimeCharts.Server/RealTimeCharts.Server/bin/Debug/net6.0
