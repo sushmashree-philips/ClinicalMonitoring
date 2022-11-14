@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.SignalR;
 using RealTimeCharts.Server.DataStorage;
 using RealTimeCharts.Server.HubConfig;
 using RealTimeCharts.Server.TimerFeatures;
+using System.Reflection;
 
 namespace RealTimeCharts.Server.Controllers
 {
@@ -25,6 +26,8 @@ namespace RealTimeCharts.Server.Controllers
         {
             if (!_timer.IsTimerStarted)
                 _timer.PrepareTimer(() => _hub.Clients.All.SendAsync("transferpatientData", DataManager.GetData()));
+
+            DataManager.pointer = 0;
             return Ok(new { Message = "Request Completed" });
         }
 
