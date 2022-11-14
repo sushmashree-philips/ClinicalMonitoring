@@ -20,16 +20,14 @@ export class AppComponent {
   ngOnInit() {
     this.signalRService.startConnection();
     this.signalRService.addTransferChartDataListener();
-    this.startHttpRequest();
   }
 
-  private startHttpRequest = () => {
+  // Call this mtd on click of "start scan" button
+  onStart() {
+    this.message = 'Admin Content goes Here!!';
     this.http.get('https://localhost:5001/api/chart').subscribe((res) => {
       console.log(res);
     });
-  };
-
-  onStart() {
-    this.message = 'Admin Content goes Here!!';
+    // Invoke Email part
   }
 }

@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import * as signalR from '@microsoft/signalr';
 import { Subject } from 'rxjs';
-import { ChartModel } from '../_interfaces/chartmodel.model';
+import { PatientData } from '../_interfaces/step.model';
 
 @Injectable({
   providedIn: 'root',
 })
 export class SignalrService {
-  public data = new Subject<string[]>();
+  public data = new Subject<PatientData[]>();
 
   private hubConnection!: signalR.HubConnection;
 
@@ -22,13 +22,10 @@ export class SignalrService {
   };
 
   public addTransferChartDataListener = () => {
-    this.hubConnection.on('transferpatientData', (data1:{procedure:string}[]) => {
+    this.hubConnection.on('transferpatientData', (data1: PatientData[]) => {
       console.log(data1);
-      let resp = data1.map(val => val.procedure)
-      // for (var i = 0; i < data1.length; i++) {
-        // this.data.next({ Procedure: data1[i].procedure });
-        this.data.next(resp);
-      // }
+      let resp = data1.map((val) => val.procedure);
+      this.data.next(data1);
     });
   };
 

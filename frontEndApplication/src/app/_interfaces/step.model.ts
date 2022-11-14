@@ -4,6 +4,11 @@ export interface StepCompletionStatus {
 }
 
 export interface StepContentInfo {
-    title: string;
-    content: string[];
-  }
+  title: string;
+  content: string[];
+}
+
+export interface PatientData {
+  procedure: string;
+  remainingTime: string;
+}
