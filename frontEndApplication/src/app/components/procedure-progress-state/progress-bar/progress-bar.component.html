@@ -1,0 +1,74 @@
+<div class="step-progress">
+  <div class="container" #container>
+    <ng-container *ngFor="let item of itemProgressList; index as i">
+      <div
+        class="check-box"
+        [ngClass]="{
+          complete: item.status === 'completed',
+          active: item.status === 'in progress'
+        }"
+      >
+        <svg id="checkbox" viewBox="0 0 100 100" (click)="viewStepDetails(i)">
+          <circle class="circle" cx="50.5" cy="49" r="45" />
+          <polyline class="check" points="28.5,51.9 41.9,65.3 72.5,32.8 " />
+        </svg>
+        <div
+          [ngClass]="{
+            complete: item.status === 'completed',
+            active: item.status === 'in progress'
+          }"
+          class="progress-line"
+          *ngIf="i !== itemLength - 1"
+        >
+          <div class="progress-percent"></div>
+        </div>
+        <div class="info">
+          <!-- <span class="step">step {{ i + 1 }}</span> -->
+          <span class="step" [ngClass]="{
+            'margin-left-scan-step': item.title === 'Scan'
+          }">{{ item.title }}</span>
+          <span
+            class="progress-info"
+            [ngClass]="{
+              completed: item.status === 'completed',
+              'in-progress': item.status === 'in progress'
+            }"
+            >{{ item.status }}</span
+          >
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</div>
+<div class="step-content">
+  <!-- <ng-content select="app-progress-step"></ng-content> -->
+  <!-- STEP 1 -->
+  <app-progress-step>
+    <h1>Pre-Procedure</h1>
+    <ul class="step-content-scroll">
+      <li *ngFor="let val of preProcedureStepContent">
+        <div>{{ val }}</div>
+      </li>
+    </ul>
+  </app-progress-step>
+
+  <!-- STEP 2 -->
+  <app-progress-step>
+    <h1>Scan</h1>
+    <ul class="step-content-scroll">
+      <li *ngFor="let val of scanStepContent">
+        <div>{{ val }}</div>
+      </li>
+    </ul>
+  </app-progress-step>
+
+  <!-- STEP 3 -->
+  <app-progress-step>
+    <h1>Post-Procedure</h1>
+    <ul class="step-content-scroll">
+      <li *ngFor="let val of postProcedureStepContent">
+        {{ val }}
+      </li>
+    </ul>
+  </app-progress-step>
+</div>

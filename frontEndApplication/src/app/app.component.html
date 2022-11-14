@@ -9,11 +9,11 @@
 
       <h4 class="name">Patient Name</h4>
       <p class="designation">Type of issue</p>
-      <button mat-button (click)="onStart()" class="menu-button">
+      <button mat-button (click)="onStart()" routerLink="/" class="menu-button">
           <mat-icon>person</mat-icon>
           <span>Admin</span>
       </button>
-      <button mat-button class="menu-button">
+      <button mat-button routerLink="/procedure-progress" class="menu-button">
           <mat-icon>people</mat-icon>
           <span>Care-Taker</span>
       </button>
@@ -41,7 +41,7 @@
   </mat-sidenav>
       <mat-sidenav-content>
           <div class="content mat-elevation-z8">
-             {{message}}
+            <router-outlet></router-outlet>
           </div>
       </mat-sidenav-content>
   </mat-sidenav-container>
