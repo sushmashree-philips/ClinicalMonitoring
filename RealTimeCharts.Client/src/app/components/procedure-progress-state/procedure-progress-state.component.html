@@ -1,0 +1,96 @@
+
+<h1 class="procedure-title">
+  {{ procedureTitle }}
+</h1>
+<div class="procedure-timer">
+  <app-countdown-timer [timeleft]="timeleft"></app-countdown-timer>
+</div>
+<app-progress-bar #progress (stateChange)="onStateChange($event)">
+  <app-progress-step>
+    <h1>Pre-Procedure</h1>
+    <p>Procedure has started. Completion Period = 45mints</p>
+    <p>
+      Patient is moved to the pre-procedure room , Completion Period = 45 mints
+    </p>
+    <p>Injecting the contrast via nasil is in progress.</p>
+    <p>Contrast in take is completed.</p>
+    <p>Patient is coping with the procedure, process is going smooth.</p>
+    <p>Patient is in pre-procedure looby.</p>
+    <p>Moved to scanning room.</p>
+    <button
+      progressStepNext
+      mat-raised-button
+      color="primary"
+      class="display-none"
+    >
+      next
+    </button>
+  </app-progress-step>
+  <app-progress-step>
+    <h1>Scan</h1>
+    <p>Scan is started and in progress</p>
+    <p>Upper Abdomen is completed.</p>
+    <p>Lower Abdomen scan is in progress.</p>
+    <p>Scan is completed, Patient moving to post procedure room.</p>
+    <button
+      progressStepPrev
+      mat-raised-button
+      color="accent"
+      class="display-none"
+    >
+      prev
+    </button>
+    <button
+      style="margin-left: 10px"
+      progressStepNext
+      mat-raised-button
+      color="primary"
+      class="display-none"
+    >
+      next
+    </button>
+  </app-progress-step>
+  <app-progress-step>
+    <h1>Post-Procedure</h1>
+    <p>Offloading the contrast in progress, resting period = 5 mints</p>
+    <p>Procedure completed, please wait for the patient in lobby.</p>
+    <button
+      progressStepPrev
+      mat-raised-button
+      color="accent"
+      class="display-none"
+    >
+      prev
+    </button>
+    <button
+      progressStepNext
+      mat-raised-button
+      color="primary"
+      style="margin-left: 10px"
+      class="display-none"
+    >
+      next
+    </button>
+  </app-progress-step>
+  <app-progress-step>
+    <h1>Checkout</h1>
+    <p>Get rest and proper medication</p>
+    <button
+      progressStepPrev
+      mat-raised-button
+      color="accent"
+      class="display-none"
+    >
+      prev
+    </button>
+    <button
+      progressStepNext
+      mat-raised-button
+      color="primary"
+      style="margin-left: 10px"
+      class="display-none"
+    >
+      next
+    </button>
+  </app-progress-step>
+</app-progress-bar>

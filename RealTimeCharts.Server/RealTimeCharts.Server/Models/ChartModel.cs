@@ -4,6 +4,6 @@
     {
 
         public string? Procedure { get; set; }
-        public string? ReaminingTime { get; set; }
+        public string? RemainingTime { get; set; }
     }
 }

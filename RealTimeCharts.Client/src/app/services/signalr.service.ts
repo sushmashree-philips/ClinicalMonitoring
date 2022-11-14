@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import * as signalR from "@microsoft/signalr"
+import { Subject } from 'rxjs';
 import { ChartModel } from '../_interfaces/chartmodel.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SignalrService {
-  public data = [];
+  public data = new Subject();
 
   private hubConnection: signalR.HubConnection
 
@@ -25,7 +26,7 @@ export class SignalrService {
         console.log(data1);
         for(var i=0;i<data1.length;i++)
         {
-          this.data.push({Name:data1[i].name,Age:data1[i].age});
+          this.data.next({Name:data1[i].name,Age:data1[i].age});
         }
       });
     }

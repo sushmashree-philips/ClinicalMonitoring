@@ -37,7 +37,7 @@ namespace RealTimeCharts.Server.DataStorage
             if (pointer <= ScanningData.Count - 1)
             {
                 timer -= 3;
-                ScanningData[pointer].ReaminingTime = timer.ToString();
+                ScanningData[pointer].RemainingTime = timer.ToString();
                 pointer++;
             }
 
