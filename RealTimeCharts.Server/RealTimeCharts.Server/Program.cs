@@ -17,6 +17,8 @@ builder.Services.AddCors(options =>
 builder.Services.AddSignalR();
 
 builder.Services.AddSingleton<TimerManager>();
+builder.Services.AddSingleton<TechnicianTimeManager>();
+
 
 builder.Services.AddControllers();
 
