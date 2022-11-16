@@ -15,10 +15,11 @@ mat-sidenav {
 }
 
 .content {
-  height: calc(100vh - 98px);
+  // height: calc(100vh - 98px);
+  height: 86vh;
   border-radius: 10px;
-  margin: 16px;
-  margin-left: 32px;
+  // margin: 16px;
+  // margin-left: 32px;
 
   display: flex;
   justify-content: center;
@@ -67,3 +68,4 @@ mat-divider {
   font-size: 0.7rem;
   color: lightgrey;
 }
+
