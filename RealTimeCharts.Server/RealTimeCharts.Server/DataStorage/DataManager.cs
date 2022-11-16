@@ -11,7 +11,7 @@ namespace RealTimeCharts.Server.DataStorage
         private static readonly List<PatientData> ScanningData = new List<PatientData>();
 
         static Dictionary<string, string> LogData = new Dictionary<string, string>();
-        static int timer = 60;
+        static int timer = 120;
 
         static DataManager()
         {
@@ -36,7 +36,7 @@ namespace RealTimeCharts.Server.DataStorage
         {
             if (pointer <= ScanningData.Count - 1)
             {
-                timer -= 3;
+                timer -= 4;
                 ScanningData[pointer].RemainingTime = timer.ToString();
                 pointer++;
             }

@@ -20,7 +20,7 @@ namespace RealTimeCharts.Server.DataStorage
             var path = config.GetValue<string>("appSettings:LogFile");
 
             pointer = 15;
-            timer = 60;
+            timer = 120;
 
             var file = File.ReadAllText(path);
 
@@ -42,7 +42,7 @@ namespace RealTimeCharts.Server.DataStorage
                 for (int i = 0; i <= 14; i++)
                 {
                     ScanningData[counter].RemainingTime = timer.ToString();
-                    timer -= 3;
+                    timer -= 4;
                     counter++;
                 }
                 result = ScanningData.Take(pointer).ToList();
@@ -56,7 +56,7 @@ namespace RealTimeCharts.Server.DataStorage
 
                     ScanningData[pointer - 1].RemainingTime = timer.ToString();
                     result = ScanningData.Take(pointer).ToList();
-                    timer -= 3;
+                    timer -= 4;
                     pointer++;
                 }
                 else
