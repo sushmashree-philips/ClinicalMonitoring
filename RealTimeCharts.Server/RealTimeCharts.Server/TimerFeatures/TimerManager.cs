@@ -12,7 +12,7 @@
         {
             _action = action;
             _autoResetEvent = new AutoResetEvent(false);
-            _timer = new Timer(Execute, _autoResetEvent, 2000, 2000);
+            _timer = new Timer(Execute, _autoResetEvent, 1000, 10000);
             TimerStarted = DateTime.Now;
             IsTimerStarted = true;
         }
@@ -21,7 +21,7 @@
         {
             _action();
 
-            if ((DateTime.Now - TimerStarted).TotalSeconds > 120)
+            if ((DateTime.Now - TimerStarted).TotalSeconds > 100)
             {
                 IsTimerStarted = false;
                 _timer.Dispose();
