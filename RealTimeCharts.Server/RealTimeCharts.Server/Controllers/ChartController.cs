@@ -36,12 +36,12 @@ namespace RealTimeCharts.Server.Controllers
         {
             try
             {
-                //var PhoneNumbers = new List<string> { "+919739975479", "+918754405440", "+919739105557","+919886949092","+91953800885" };
+                //var PhoneNumbers = new List<string> { "+919739975479", "+918754405440", "+919739105557", "+919886949092", "+91953800885" };
                 //foreach (var PhoneNumber in PhoneNumbers)
                 //{
                 //    using (HttpClient client = new HttpClient())
                 //    {
-                //        client.BaseAddress = new Uri("https://api-mapper.clicksend.com/http/v2/send.php?method=http&username=uma.r@bt.com&key=P@ssword@123&to="+ PhoneNumber+"&message=Hello Dear,    Mesage from Saviour ..!! Please Logon to https://ClinicalSaviours.com/procedures  for latest updates on clinical procedures.&senderid=mycompany");
+                //        client.BaseAddress = new Uri("https://api-mapper.clicksend.com/http/v2/send.php?method=http&username=uma.r@bt.com&key=P@ssword@123&to=" + PhoneNumber + "&message= We are with you, please use below link to know more about the patient's procedure updates https://patient-procedure-monitring.com .&senderid=mycompany");
                 //        HttpRequestMessage request = new HttpRequestMessage();
                 //        request.Method = HttpMethod.Get;
                 //        var response = await client.SendAsync(request);

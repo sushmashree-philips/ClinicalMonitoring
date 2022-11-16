@@ -1,10 +1,10 @@
 {
-  "Step_1": "Message_1",
-  "Step_2": "Message_3",
-  "Step_3": "Message_4",
-  "Step_4": "Message_5",
-  "Step_5": "Message_6",
-  "Step_6": "Message_7",
-  "Step_7": "Message_8",
-  "Step_8": "Message_9"
+  "Step_1": "Patient has entered pre-procedure room",
+  "Step_2": "Patient is relaxing in the pre-procedure looby and Scan will begin in few mints",
+  "Step_3": "Patient is in scanning room, Scanning setup is ready",
+  "Step_4": "Scan started",
+  "Step_5": "Scanning Is In Progress",
+  "Step_6": "Scanning Completed Successfully",
+  "Step_7": "Patient is in post procedural room",
+  "Step_8": "procedure completed, please wait for the patient in the looby"
 }
