@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { SignalrService } from './services/signalr.service';
 import { HttpClient } from '@angular/common/http';
 
+
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -11,6 +13,8 @@ export class AppComponent {
   title = 'clinal-process';
 
   message = 'Main content here!!';
+  patientName = "Patient Name";
+  typeOfIssue = "Type of issue";
 
   constructor(
     public signalRService: SignalrService,
@@ -18,16 +22,9 @@ export class AppComponent {
   ) {}
 
   ngOnInit() {
-    this.signalRService.startConnection();
-    this.signalRService.addTransferChartDataListener();
+
   }
 
-  // Call this mtd on click of "start scan" button
-  onStart() {
-    this.message = 'Admin Content goes Here!!';
-    this.http.get('https://localhost:5001/api/chart').subscribe((res) => {
-      console.log(res);
-    });
-    // Invoke Email part
-  }
+
+
 }

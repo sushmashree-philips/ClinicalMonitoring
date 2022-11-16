@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "cec6a9d4-8d04-4183-bd05-94e52dbe9b92": {
+      "ProjectGuid": "cec6a9d4-8d04-4183-bd05-94e52dbe9b92",
+      "DisplayName": "RealTimeCharts.Server",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}

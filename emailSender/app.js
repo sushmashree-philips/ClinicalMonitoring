@@ -5,9 +5,12 @@ const nodemailer = require("nodemailer");
 
 const details = require("./details.json");
 
-const app = express();
+var app = express(); 
 app.use(cors({ origin: "*" }));
-app.use(bodyParser.json());
+// app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(bodyParser.text());
+app.use(bodyParser.urlencoded({ extended: true }))
 
 app.listen(3200, () => {
   console.log("The server started on port 3200 !!!!!!");
@@ -19,7 +22,11 @@ app.get("/", (req, res) => {
   );
 });
 
+var patientDetails = "test"
+
 app.post("/sendmail", (req,res) => {
+  console.log(req.body);
+  this.patientDetails = req.body; 
   console.log("request came");
   let user = "prometheusalert01@gmail.com";
   let info = "testmsg";
@@ -45,8 +52,9 @@ async function sendMail(callback) {
     from: 'prometheusalert01@gmail.com', // sender address
     to: "prometheusalert01@gmail.com", // list of receivers
     subject: "Welcome to a sample app to send email", // Subject line
-    html: `<h1>Hi I am here</h1><br>
-    <h4>Thanks for testing us</h4>`
+    Text : "kjsdfsjbds",
+    html: `<h3 style="color: green;">We are with you, please access below url to get instant update about the procedure</h1><br>
+    <h3>http://localhost:4200/procedure-progress</h3>`
   };
 
   // send mail with defined transport object

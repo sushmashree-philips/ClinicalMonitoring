@@ -1,0 +1,137 @@
+<!-- <div class="container">
+  <h1>
+    {{title}}
+  </h1>
+
+  <form [formGroup]="formGroup" (ngSubmit)="onSubmit(formGroup.value)">
+    <div class="form-group">
+      <label for="name">Full name</label>
+      <input type="text" class="form-control" id="name"
+        placeholder="Enter full name" formControlName="name" />
+    </div>
+
+    <div class="form-group">
+      <label for="name">Email address</label>
+      <input type="email" class="form-control" id="email"
+        placeholder="Enter email" formControlName="email" />
+    </div>
+
+    <div class="form-group form-check">
+      <input type="checkbox" class="form-check-input"
+        id="terms" formControlName="terms" />
+      <label class="form-check-label" for="terms">Agree to terms and conditions?</label>
+    </div>
+
+    <button class="btn btn-primary" type="submit">Submit Form</button>
+  </form>
+</div> -->
+
+<div class="container">
+  <h1 style="margin-bottom: 40px;">
+    {{title}}
+  </h1>
+
+  <!-- <h3>Cart</h3> -->
+
+
+<!-- <form [formGroup]="formGroup" (ngSubmit)="onSubmit(formGroup.value)">
+
+  <div> -->
+    <!-- <label for="name">
+      Name
+    </label>
+    <input id="name" type="text" formControlName="name"> -->
+
+
+    <!-- <mat-form-field appearance="fill">
+      <mat-label>Patient Name</mat-label>
+      <input matInput>
+    </mat-form-field>
+    <div>
+    <mat-form-field appearance="fill">
+      <mat-label>Procedure Type</mat-label>
+      <input matInput>
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field appearance="fill">
+      <mat-label>Protocol</mat-label>
+      <textarea matInput></textarea>
+    </mat-form-field>
+  </div>
+
+  </div> -->
+
+  <!-- <div>
+    <label for="address">
+      Address
+    </label>
+    <input id="address" type="text" formControlName="address">
+  </div> -->
+
+  <!-- <button mat-raised-button class="button" type="submit">Start</button>
+
+</form>
+</div> -->
+
+<!-- <mat-form-field appearance="fill">
+  <mat-label>Protocol< /mat-label>
+  <textarea matInput></textarea>
+</mat-form-field> -->
+<form [formGroup]="formGroup" (ngSubmit)="onSubmit(formGroup.value)">
+<div class="row">
+  <div  class="col">
+    <!-- <input type="text" class="form-control"  placeholder="Patient Name/ID" aria-label="First name"> -->
+    <mat-form-field appearance="fill">
+      <mat-label>Patient Name/ID</mat-label>
+      <input matInput formControlName="patientname">
+    </mat-form-field>
+  </div>
+  <div  class="col">
+    <!-- <input type="text" class="form-control" placeholder="Patient Name/ID" aria-label="Last name"> -->
+    <mat-form-field  appearance="fill">
+      <mat-label>Technician Name/ID</mat-label>
+      <input matInput formControlName="technicianname">
+    </mat-form-field>
+  </div>
+  <div class="row">
+    <div  class="col">
+      <!-- <input type="text" class="form-control"  placeholder="Patient Name/ID" aria-label="First name"> -->
+      <mat-form-field  appearance="fill">
+        <mat-label>Procedure Type</mat-label>
+        <input matInput formControlName="proceduretype">
+      </mat-form-field>
+    </div>
+    <div style="margin-left:17px ;" class="col">
+      <!-- <input type="text" class="form-control" placeholder="Patient Name/ID" aria-label="Last name"> -->
+      <mat-form-field appearance="fill">
+        <mat-label>Protocol</mat-label>
+        <input matInput formControlName="protocol">
+      </mat-form-field>
+    </div>
+
+    <div class="row">
+      <div  class="col">
+        <!-- <input type="text" class="form-control"  placeholder="Procedure Type" aria-label="First name"> -->
+        <!-- <mat-form-field style="margin-right:70px;" appearance="fill">
+          <mat-label>Patient Name</mat-label>
+          <input matInput>
+        </mat-form-field> -->
+
+        <mat-form-field appearance="fill">
+          <mat-label>Additioinal Data</mat-label>
+          <textarea matInput formControlName="additionaldata"></textarea>
+        </mat-form-field>
+      </div>
+
+</div>
+
+</div>
+</div>
+<div>
+  <button mat-raised-button style="margin-left: 70%;width: 10em; background-color: green;" class="button" type="submit">Start</button>
+</div>
+</form>
+
+
+
