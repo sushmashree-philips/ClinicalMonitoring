@@ -19,7 +19,7 @@ export class CountdownTimerComponent implements OnInit, OnDestroy, OnChanges {
 
   private subscription!: Subscription;
 
-  public completionTime: any;
+  public remainingTime: any;
   milliSecondsInASecond = 1000;
   hoursInADay = 24;
   minutesInAnHour = 60;
@@ -32,7 +32,7 @@ export class CountdownTimerComponent implements OnInit, OnDestroy, OnChanges {
   public daysToCompletion!: number;
 
   private getTimeDifference() {
-    const updtimeNow = this.completionTime;
+    const updtimeNow = this.remainingTime;
     this.timeDifference = updtimeNow - new Date().getTime();
     this.allocateTimeUnits(this.timeDifference);
   }
@@ -62,13 +62,13 @@ export class CountdownTimerComponent implements OnInit, OnDestroy, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    this.completionTime = this.timeleft;
+    this.remainingTime = this.timeleft;
   }
 
   ngOnInit() {
-    this.subscription = interval(1000).subscribe((x) => {
-      this.getTimeDifference();
-    });
+    // this.subscription = interval(1000).subscribe((x) => {
+    //   this.getTimeDifference();
+    // });
   }
 
   ngOnDestroy() {

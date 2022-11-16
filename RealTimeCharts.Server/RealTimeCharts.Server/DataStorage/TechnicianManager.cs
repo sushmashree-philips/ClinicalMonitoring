@@ -3,23 +3,21 @@ using RealTimeCharts.Server.Models;
 
 namespace RealTimeCharts.Server.DataStorage
 {
-    public class DataManager
+    public class TechnicianManager
     {
-
-
         public static int pointer;
         private static readonly List<PatientData> ScanningData = new List<PatientData>();
 
         static Dictionary<string, string> LogData = new Dictionary<string, string>();
         static int timer = 60;
 
-        static DataManager()
+        static TechnicianManager()
         {
             var config = new ConfigurationBuilder()
                 .SetBasePath(Directory.GetCurrentDirectory())
                 .AddJsonFile("appsettings.json").Build();
 
-            var path = config.GetValue<string>("appSettings:LogFile");
+            var path = config.GetValue<string>("appSettings:TechnicianFile");
 
             pointer = 0;
 

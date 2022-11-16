@@ -1,6 +1,6 @@
 ﻿namespace RealTimeCharts.Server.TimerFeatures
 {
-    public class TimerManager
+    public class TechnicianTimeManager
     {
         private Timer? _timer;
         private AutoResetEvent? _autoResetEvent;
@@ -12,7 +12,7 @@
         {
             _action = action;
             _autoResetEvent = new AutoResetEvent(false);
-            _timer = new Timer(Execute, _autoResetEvent, 2000, 2000);
+            _timer = new Timer(Execute, _autoResetEvent, 1000, 1000);
             TimerStarted = DateTime.Now;
             IsTimerStarted = true;
         }

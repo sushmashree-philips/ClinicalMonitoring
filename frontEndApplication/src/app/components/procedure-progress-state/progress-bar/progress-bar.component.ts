@@ -70,7 +70,8 @@ export class ProgressBarComponent implements OnInit, AfterViewInit {
   }
 
   private updateProgressSteps() {
-    this.signalRService.data.subscribe((resp) => {
+    this.signalRService.data.subscribe((response) => {
+      let resp = response.map(val => val.procedure)
       this.preProcedure.endIndex = resp.findIndex(
         (ele, ind) =>
           ele.toLocaleLowerCase() ===

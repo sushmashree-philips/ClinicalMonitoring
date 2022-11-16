@@ -1,9 +1,12 @@
-
 <h1 class="procedure-title">
   {{ procedureTitle }}
 </h1>
 <div class="procedure-timer">
   <app-countdown-timer [timeleft]="timeleft"></app-countdown-timer>
 </div>
-<app-progress-bar #progress (stateChange)="onStateChange($event)" (allStepsCompleted)="onComplete($event)">
+<app-progress-bar
+  #progress
+  (stateChange)="onStateChange($event)"
+  (allStepsCompleted)="onComplete($event)"
+>
 </app-progress-bar>

@@ -41,7 +41,7 @@ namespace RealTimeCharts.Server.DataStorage
                 int counter = 0;
                 for (int i = 0; i <= 14; i++)
                 {
-                    ScanningData[counter].ReaminingTime = timer.ToString();
+                    ScanningData[counter].RemainingTime = timer.ToString();
                     timer -= 3;
                     counter++;
                 }
@@ -54,14 +54,14 @@ namespace RealTimeCharts.Server.DataStorage
                 if (pointer <= ScanningData.Count - 1)
                 {
 
-                    ScanningData[pointer - 1].ReaminingTime = timer.ToString();
+                    ScanningData[pointer - 1].RemainingTime = timer.ToString();
                     result = ScanningData.Take(pointer).ToList();
                     timer -= 3;
                     pointer++;
                 }
                 else
                 {
-                    ScanningData.LastOrDefault().ReaminingTime = "0";
+                    ScanningData.LastOrDefault().RemainingTime = "0";
                     result = ScanningData;
                 }
             }
@@ -72,7 +72,7 @@ namespace RealTimeCharts.Server.DataStorage
             {
                 Console.WriteLine("Index: " + count);
                 Console.WriteLine("Procedure: " + item.Procedure);
-                Console.WriteLine("Timer : " + item.ReaminingTime);
+                Console.WriteLine("Timer : " + item.RemainingTime);
                 count++;
             }
 
