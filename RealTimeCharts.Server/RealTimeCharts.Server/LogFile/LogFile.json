@@ -1,10 +1,17 @@
 {
   "Step_1": "Patient has entered pre-procedure room",
-  "Step_2": "Patient is relaxing in the pre-procedure looby and Scan will begin in few mints",
-  "Step_3": "Patient is in scanning room, Scanning setup is ready",
-  "Step_4": "Scan started",
-  "Step_5": "Scanning Is In Progress",
-  "Step_6": "Scanning Completed Successfully",
-  "Step_7": "Patient is in post procedural room",
-  "Step_8": "procedure completed, please wait for the patient in the looby"
+  "Step_2": "Enima/Contrast dose is ready to be injected",
+  "Step_3": "Injection is in progress, patient is comfortable and responding well with contrast",
+  "Step_4": "Patient is relaxing in the pre-procedure looby and Scan will begin in few mints",
+  "Step_5": "Pre-procedure stage completed",
+  "Step_6": "Patient is in scanning room, Scanning setup is ready",
+  "Step_7": "Scan started",
+  "Step_8": "As part of this scan 3 exams are to be completed",
+  "Step_9": "Scan is in progress - 40% completed",
+  "Step_10": "Scan is in progress - 70% completed",
+  "Step_11": "Scan is in progress - 100% completed",
+  "Step_12": "Scanning Completed Successfully",
+  "Step_13": "Patient is in post procedural room",
+  "Step_14": "Discharging of enima/ contrast in progress",
+  "Step_15": "procedure completed, please wait for the patient in the looby"
 }

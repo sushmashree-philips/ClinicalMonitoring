@@ -12,7 +12,7 @@ namespace RealTimeCharts.Server.DataStorage
         private static readonly List<PatientData> ScanningData = new List<PatientData>();
 
         static Dictionary<string, string> LogData = new Dictionary<string, string>();
-        static int timer = 100;
+        static int timer = 85;
         static bool pause;
         static bool delayachived=false;
         static bool PonterChnaged = false;
@@ -43,7 +43,6 @@ namespace RealTimeCharts.Server.DataStorage
                 if (pointer <= ScanningData.Count - 1)
                 {
                     ScanningData[pointer].RemainingTime = timer.ToString();
-                    ScanningData[pointer].Procedure = ScanningData[pointer].Procedure+  "   Timer : " +timer.ToString();
                     pointer++;
                 }
 
@@ -53,15 +52,13 @@ namespace RealTimeCharts.Server.DataStorage
                 delayachived = true;
             }
 
-            if (pointer == 8) 
+            if (pointer == 15) 
             {
-                pointer = 7;
+                pointer = 14;
                 PonterChnaged=true;
-
             }
-               
-
-            if (delayachived == false &&(ScanningData[pointer].Step == "Step_3" || ScanningData[pointer].Step == "Step_6" ||  ScanningData[pointer].Step == "Step_8"))
+          
+            if (delayachived == false &&(ScanningData[pointer].Step == "Step_4" || ScanningData[pointer].Step == "Step_10" ||  ScanningData[pointer].Step == "Step_14"))
             {
                 pause = true;
             }
@@ -74,11 +71,11 @@ namespace RealTimeCharts.Server.DataStorage
 
             if (PonterChnaged) 
             {
-                pointer = 8;
+                pointer = 15;
                 PonterChnaged = false;
             }
 
-            timer -= 10;
+            timer -= 5;
 
             return ScanningData.Take(pointer).ToList();
         }
