@@ -42,7 +42,7 @@ namespace RealTimeCharts.Server.DataStorage
                 if (pointer <= ScanningData.Count - 1)
                 {
                     ScanningData[pointer].RemainingTime = timer.ToString();
-                    ScanningData[pointer].Procedure = ScanningData[pointer].Procedure+"   Timer : "+  timer.ToString();
+                  
                     pointer++;
                     timer -= 5;
                 }
