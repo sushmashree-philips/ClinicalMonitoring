@@ -1,39 +1,68 @@
-<mat-toolbar>
+<mat-toolbar> Clinical Saviours - Procedure details </mat-toolbar>
 
-  Clinical Saviours - Procedure details
-  </mat-toolbar>
+<mat-sidenav-container>
+  <mat-sidenav mode="side" opened class="mat-elevation-z8">
+    <img
+      class="avatar mat-elevation-z8"
+      [src]="patientImage"
+    />
 
-  <mat-sidenav-container>
-    <mat-sidenav mode="side" opened class="mat-elevation-z8">
-      <img class="avatar mat-elevation-z8" src="https://source.unsplash.com/c_GmwfHBDzk/200x200" />
-
-      <h4 class="name">{{patientName}}</h4>
-      <p class="designation">{{typeOfIssue}}</p>
-      <button mat-button routerLink="/admin" class="menu-button">
-          <mat-icon>person</mat-icon>
-          <span>Admin</span>
-      </button>
-      <button mat-button routerLink="/procedure-progress" class="menu-button">
-          <mat-icon>people</mat-icon>
-          <span>Care-Taker</span>
-      </button>
-      <button mat-button class="menu-button">
-        <mat-icon>attachment</mat-icon>
-        <span>Reports</span>
+    <h4 class="name">{{ patientName }}</h4>
+    <p class="designation">{{ typeOfIssue }}</p>
+    <button mat-button routerLink="/admin" class="menu-button">
+      <mat-icon>person</mat-icon>
+      <span>Admin</span>
     </button>
-    <button mat-button routerLink="/postprepaction" class="menu-button">
-      <mat-icon>feedback</mat-icon>
-      <span>PostPrep Action</span>
-  </button>
-  <button mat-button routerLink="/refdocs" class="menu-button">
-    <mat-icon>help</mat-icon>
-    <span>Ref Doc</span>
-  </button>
+    <button
+      mat-button
+      routerLink="/procedure-progress"
+      class="menu-button"
+      *ngIf="!isDisabled"
+    >
+      <mat-icon>people</mat-icon>
+      <span>Care-Taker</span>
+    </button>
 
+    <button
+      mat-button
+      routerLink="/postprepaction"
+      class="menu-button"
+      *ngIf="!isDisabled"
+    >
+      <mat-icon>feedback</mat-icon>
+      <span>Instructions</span>
+    </button>
+    <button
+      mat-button
+      routerLink="/refdocs"
+      class="menu-button"
+      *ngIf="!isDisabled"
+    >
+      <mat-icon>help</mat-icon>
+      <span>Ref Doc</span>
+    </button>
+    <button
+      mat-button
+      class="menu-button"
+      routerLink="/feedback"
+      *ngIf="!isDisabled"
+    >
+      <mat-icon>feedback</mat-icon>
+      <span>Feedback</span>
+    </button>
+    <button
+      mat-button
+      class="menu-button"
+      routerLink="/reports"
+      *ngIf="!isDisabled"
+    >
+      <mat-icon>assignment_returned</mat-icon>
+      <span>Reports</span>
+    </button>
   </mat-sidenav>
-      <mat-sidenav-content>
-          <div class="content mat-elevation-z8">
-            <router-outlet></router-outlet>
-          </div>
-      </mat-sidenav-content>
-  </mat-sidenav-container>
+  <mat-sidenav-content>
+    <div class="content mat-elevation-z8">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

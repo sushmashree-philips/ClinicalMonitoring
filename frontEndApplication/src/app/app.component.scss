@@ -69,3 +69,12 @@ mat-divider {
   color: lightgrey;
 }
 
+.mat-button.mat-button-disabled.mat-button-disabled {
+  color: darkgray !important;
+  cursor: not-allowed !important;
+}
+
+:host {
+  background-image: url(./../../images/Philips_Incisive_CT_system.jpg);
+  background-size: 100% auto;
+}

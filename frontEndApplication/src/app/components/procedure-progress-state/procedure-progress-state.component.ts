@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ScanButtonStatus } from 'src/app/constants/constants';
+import { GlobalService } from 'src/app/services/global.service';
 import { SignalrService } from 'src/app/services/signalr.service';
 
 @Component({
@@ -11,7 +13,7 @@ export class ProcedureProgressStateComponent implements OnInit {
   // Procedure timespan
   private procedureTime: number = 30;
   timeleft: any;
-  constructor(public signalRService: SignalrService) {}
+  constructor(public signalRService: SignalrService, public globalService: GlobalService) {}
 
   ngOnInit(): void {
     this.procedureTitle = 'Test procedure';
@@ -36,7 +38,8 @@ export class ProcedureProgressStateComponent implements OnInit {
 
   onComplete(isComplete: boolean) {
     if (isComplete) {
-      this.timeleft = new Date();
+      // this.timeleft = new Date();
+      this.globalService.scanButtonStatus.next(ScanButtonStatus.COMPLETED)
     }
   }
 }
