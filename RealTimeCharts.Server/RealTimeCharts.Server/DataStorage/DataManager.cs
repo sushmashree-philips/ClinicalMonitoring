@@ -12,10 +12,10 @@ namespace RealTimeCharts.Server.DataStorage
         private static readonly List<PatientData> ScanningData = new List<PatientData>();
 
         static Dictionary<string, string> LogData = new Dictionary<string, string>();
-        static int timer = 85;
-        static bool pause;
-        static bool delayachived=false;
-        static bool PonterChnaged = false;
+        public static int timer = 85;
+        public static bool pause;
+        public static bool delayachived=false;
+        public static bool PonterChnaged = false;
         static DataManager()
         {
             var config = new ConfigurationBuilder()
