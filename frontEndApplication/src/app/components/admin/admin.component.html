@@ -27,23 +27,21 @@
 </div> -->
 
 <div class="container">
-  <h1 style="margin-bottom: 40px;">
-    {{title}}
+  <h1 style="margin-bottom: 40px">
+    {{ title }}
   </h1>
 
   <!-- <h3>Cart</h3> -->
 
-
-<!-- <form [formGroup]="formGroup" (ngSubmit)="onSubmit(formGroup.value)">
+  <!-- <form [formGroup]="formGroup" (ngSubmit)="onSubmit(formGroup.value)">
 
   <div> -->
-    <!-- <label for="name">
+  <!-- <label for="name">
       Name
     </label>
     <input id="name" type="text" formControlName="name"> -->
 
-
-    <!-- <mat-form-field appearance="fill">
+  <!-- <mat-form-field appearance="fill">
       <mat-label>Patient Name</mat-label>
       <input matInput>
     </mat-form-field>
@@ -74,64 +72,101 @@
 </form>
 </div> -->
 
-<!-- <mat-form-field appearance="fill">
+  <!-- <mat-form-field appearance="fill">
   <mat-label>Protocol< /mat-label>
   <textarea matInput></textarea>
 </mat-form-field> -->
-<form [formGroup]="formGroup" (ngSubmit)="onSubmit(formGroup.value)">
-<div class="row">
-  <div  class="col">
-    <!-- <input type="text" class="form-control"  placeholder="Patient Name/ID" aria-label="First name"> -->
-    <mat-form-field appearance="fill">
-      <mat-label>Patient Name/ID</mat-label>
-      <input matInput formControlName="patientname">
-    </mat-form-field>
-  </div>
-  <div  class="col">
-    <!-- <input type="text" class="form-control" placeholder="Patient Name/ID" aria-label="Last name"> -->
-    <mat-form-field  appearance="fill">
-      <mat-label>Technician Name/ID</mat-label>
-      <input matInput formControlName="technicianname">
-    </mat-form-field>
-  </div>
-  <div class="row">
-    <div  class="col">
-      <!-- <input type="text" class="form-control"  placeholder="Patient Name/ID" aria-label="First name"> -->
-      <mat-form-field  appearance="fill">
-        <mat-label>Procedure Type</mat-label>
-        <input matInput formControlName="proceduretype">
-      </mat-form-field>
-    </div>
-    <div style="margin-left:17px ;" class="col">
-      <!-- <input type="text" class="form-control" placeholder="Patient Name/ID" aria-label="Last name"> -->
-      <mat-form-field appearance="fill">
-        <mat-label>Protocol</mat-label>
-        <input matInput formControlName="protocol">
-      </mat-form-field>
-    </div>
-
+  <form [formGroup]="formGroup" (ngSubmit)="onSubmit(formGroup.value)">
     <div class="row">
-      <div  class="col">
-        <!-- <input type="text" class="form-control"  placeholder="Procedure Type" aria-label="First name"> -->
-        <!-- <mat-form-field style="margin-right:70px;" appearance="fill">
+      <div class="col">
+        <!-- <input type="text" class="form-control"  placeholder="Patient Name/ID" aria-label="First name"> -->
+        <mat-form-field appearance="fill">
+          <mat-label>Patient Name/ID</mat-label>
+          <input
+            matInput
+            formControlName="patientname"
+            [disabled]="scanBtnStatus === scanStatus.COMPLETED"
+          />
+        </mat-form-field>
+      </div>
+      <div class="col">
+        <!-- <input type="text" class="form-control" placeholder="Patient Name/ID" aria-label="Last name"> -->
+        <mat-form-field appearance="fill">
+          <mat-label>Technician Name/ID</mat-label>
+          <input
+            matInput
+            formControlName="technicianname"
+            [disabled]="scanBtnStatus === scanStatus.COMPLETED"
+          />
+        </mat-form-field>
+      </div>
+      <div class="row">
+        <div class="col">
+          <!-- <input type="text" class="form-control"  placeholder="Patient Name/ID" aria-label="First name"> -->
+          <mat-form-field appearance="fill">
+            <mat-label>Procedure Type</mat-label>
+            <input
+              matInput
+              formControlName="proceduretype"
+              [disabled]="scanBtnStatus === scanStatus.COMPLETED"
+            />
+          </mat-form-field>
+        </div>
+        <div style="margin-left: 22px" class="col">
+          <!-- <input type="text" class="form-control" placeholder="Patient Name/ID" aria-label="Last name"> -->
+          <mat-form-field appearance="fill">
+            <mat-label>Protocol</mat-label>
+            <input
+              matInput
+              formControlName="protocol"
+              [disabled]="scanBtnStatus === scanStatus.COMPLETED"
+            />
+          </mat-form-field>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <!-- <input type="text" class="form-control"  placeholder="Procedure Type" aria-label="First name"> -->
+            <!-- <mat-form-field style="margin-right:70px;" appearance="fill">
           <mat-label>Patient Name</mat-label>
           <input matInput>
         </mat-form-field> -->
 
-        <mat-form-field appearance="fill">
-          <mat-label>Additioinal Data</mat-label>
-          <textarea matInput formControlName="additionaldata"></textarea>
-        </mat-form-field>
+            <mat-form-field appearance="fill">
+              <mat-label>Additional Data</mat-label>
+              <textarea
+                matInput
+                formControlName="additionaldata"
+                [disabled]="scanBtnStatus === scanStatus.COMPLETED"
+              ></textarea>
+            </mat-form-field>
+          </div>
+
+          <div style="padding-left: 3.6rem" class="col">
+            <mat-form-field appearance="fill">
+              <mat-label>Anatomy</mat-label>
+              <input
+                matInput
+                formControlName="anatomy"
+                [disabled]="scanBtnStatus === scanStatus.COMPLETED"
+              />
+            </mat-form-field>
+          </div>
+        </div>
       </div>
-
+    </div>
+    <div>
+      <button
+        mat-raised-button
+        style="margin-left: 70%; background-color: green"
+        class="button"
+        type="submit"
+        [disabled]="!formGroup.valid && scanBtnStatus !== scanStatus.START"
+      >
+        {{ scanBtnStatus }}
+      </button>
+    </div>
+  </form>
 </div>
 
-</div>
-</div>
-<div>
-  <button mat-raised-button style="margin-left: 70%;width: 10em; background-color: green;" class="button" type="submit">Start</button>
-</div>
-</form>
-
-
-
+<ng-template> </ng-template>

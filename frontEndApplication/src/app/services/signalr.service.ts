@@ -23,10 +23,22 @@ export class SignalrService {
 
   public addTransferChartDataListener = () => {
     this.hubConnection.on('transferpatientData', (data1: PatientData[]) => {
-      console.log(data1);
-      let resp = data1.map((val) => val.procedure);
+      // console.log(data1);
+      // let resp = data1.map((val) => val.procedure);
       this.data.next(data1);
     });
+
+    //scenario 2
+    // this.hubConnection.on('transferpatientData_2', (data2: PatientData[]) => {
+    //   console.log(data2);
+    //   this.data.next(data2);
+    // });
+
+    // Technician
+    // this.hubConnection.on('GetTechnicianLogs', (data2: PatientData[]) => {
+      // TODO
+      // this.data.next(data2);
+    // });
   };
 
   public addBroadcastChartDataListener = () => {

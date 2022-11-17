@@ -19,9 +19,10 @@
 <div style="margin-top: 10%;height: auto;">
 <mat-card class="example-card">
   <mat-card-header>
-    <div mat-card-avatar class="example-header-image"></div>
+    <!-- <div mat-card-avatar class="example-header-image"></div> -->
+    <img mat-card-avatar [src]="patientImage" alt="Patient Icon"> 
     <mat-card-title>Post Procedure suggestions</mat-card-title>
-    <mat-card-subtitle>Samuel</mat-card-subtitle>
+    <mat-card-subtitle>{{patientName}}</mat-card-subtitle>
   </mat-card-header>
   <!-- <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"> -->
   <mat-card-content>

@@ -4,7 +4,7 @@ export enum UiState {
 }
 
 export enum Status {
-  PENDING = 'pending',
+  PENDING = 'yet to start',
   IN_PROGRESS = 'in progress',
   COMPLETED = 'completed',
 }
@@ -26,7 +26,13 @@ export const stepDetails = [
 ];
 
 export const enum CompletionString {
-  PRE_PROCEDURE_COMPLETED = 'Pre-procedure completed',
-  SCAN_COMPLETED = 'Scan completed',
-  POST_PROCEDURE_COMPLETED = 'Post-procedure completed',
+  PRE_PROCEDURE_COMPLETED = 'Pre-procedure stage completed',
+  SCAN_COMPLETED = 'Scanning Completed Successfully',
+  POST_PROCEDURE_COMPLETED = 'procedure completed'
+}
+
+export enum ScanButtonStatus {
+  START = 'Start Scan',
+  IN_PROGRESS = 'Scanning In progress...',
+  COMPLETED = 'Scan Completed',
 }

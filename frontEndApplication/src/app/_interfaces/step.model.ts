@@ -12,3 +12,9 @@ export interface PatientData {
   procedure: string;
   remainingTime: string;
 }
+
+export interface PatientInfo {
+  name: string;
+  issueType: string;
+  image: string
+}

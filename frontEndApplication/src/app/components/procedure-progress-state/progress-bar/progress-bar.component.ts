@@ -71,21 +71,23 @@ export class ProgressBarComponent implements OnInit, AfterViewInit {
 
   private updateProgressSteps() {
     this.signalRService.data.subscribe((response) => {
-      let resp = response.map(val => val.procedure)
+      let resp = response.map((val) => val.procedure);
       this.preProcedure.endIndex = resp.findIndex(
         (ele, ind) =>
           ele.toLocaleLowerCase() ===
           CompletionString.PRE_PROCEDURE_COMPLETED.toLocaleLowerCase()
       );
-      this.scan.endIndex = resp.findIndex(
-        (ele, ind) =>
-          ele.toLocaleLowerCase() ===
-          CompletionString.SCAN_COMPLETED.toLocaleLowerCase()
+      this.scan.endIndex = resp.findIndex((ele, ind) =>
+        ele
+          .toLocaleLowerCase()
+          .includes(CompletionString.SCAN_COMPLETED.toLocaleLowerCase())
       );
-      this.postProcedure.endIndex = resp.findIndex(
-        (ele, ind) =>
-          ele.toLocaleLowerCase() ===
-          CompletionString.POST_PROCEDURE_COMPLETED.toLocaleLowerCase()
+      this.postProcedure.endIndex = resp.findIndex((ele, ind) =>
+        ele
+          .toLocaleLowerCase()
+          .includes(
+            CompletionString.POST_PROCEDURE_COMPLETED.toLocaleLowerCase()
+          )
       );
 
       if (!this.preProcedure.isCompleted) {
@@ -93,7 +95,7 @@ export class ProgressBarComponent implements OnInit, AfterViewInit {
           this.preProcedure.isCompleted = true;
           this.preProcedureStepContent = resp.slice(
             0,
-            this.preProcedure.endIndex
+            this.preProcedure.endIndex + 1
           );
           this.startProgressBarSteps();
         } else if (this.preProcedure.endIndex == -1) {
@@ -106,7 +108,7 @@ export class ProgressBarComponent implements OnInit, AfterViewInit {
           this.scan.isCompleted = true;
           this.scanStepContent = resp.slice(
             this.preProcedure.endIndex + 1,
-            this.scan.endIndex
+            this.scan.endIndex + 1
           );
           this.startProgressBarSteps();
         } else if (this.preProcedure.endIndex > 0 && this.scan.endIndex == -1) {
@@ -269,7 +271,7 @@ export class ProgressBarComponent implements OnInit, AfterViewInit {
   // --------------Update state of each step---------------- //
 
   protected completeLastStep() {
-    console.log('In completeLastStep')
+    console.log('In completeLastStep');
     this.itemProgressList[this.activeIndex].status = Status.COMPLETED;
     this.allStepsCompleted.emit(true);
   }

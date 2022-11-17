@@ -11,23 +11,26 @@ import { ProcedureProgressStateComponent } from './components/procedure-progress
 import { CountdownTimerComponent } from './components/countdown-timer/countdown-timer.component';
 import { AdminComponent } from './components/admin/admin.component';
 
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatSidenavModule} from '@angular/material/sidenav';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSidenavModule } from '@angular/material/sidenav';
 
-import {MatButtonModule} from '@angular/material/button';
-import {MatIconModule} from '@angular/material/icon';
-import {MatDividerModule} from '@angular/material/divider';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatDividerModule } from '@angular/material/divider';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import {MatCardModule} from '@angular/material/card';
-import {MatDialogModule} from "@angular/material/dialog";
+import { MatCardModule } from '@angular/material/card';
+import { MatDialogModule } from '@angular/material/dialog';
 import { ReferencedocsComponent } from './components/referencedocs/referencedocs.component';
 import { PostprepactionComponent } from './components/postprepaction/postprepaction.component';
-
-
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { PopupDialogProgress } from './components/popup/popup-dialog-progress.component';
+import { ReportComponent } from './components/report/report.component';
+import { FeedbackComponent } from './components/feedback/feedback.component';
+import { NgxStarRatingModule } from 'ngx-star-rating';
 
 @NgModule({
   declarations: [
@@ -39,7 +42,10 @@ import { PostprepactionComponent } from './components/postprepaction/postprepact
     CountdownTimerComponent,
     AdminComponent,
     ReferencedocsComponent,
-    PostprepactionComponent
+    PostprepactionComponent,
+    PopupDialogProgress,
+    ReportComponent,
+    FeedbackComponent
   ],
   imports: [
     BrowserModule,
@@ -57,8 +63,10 @@ import { PostprepactionComponent } from './components/postprepaction/postprepact
     MatInputModule,
     MatCardModule,
     MatDialogModule,
+    MatProgressBarModule,
+    NgxStarRatingModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
