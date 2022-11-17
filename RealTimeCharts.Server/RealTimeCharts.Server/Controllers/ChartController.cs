@@ -28,10 +28,7 @@ namespace RealTimeCharts.Server.Controllers
                 _timer.PrepareTimer(() => _hub.Clients.All.SendAsync("transferpatientData", DataManager.GetData()));
 
             DataManager.pointer = 0;
-            DataManager.timer = 85;
-            DataManager.pause=false;
-            DataManager.delayachived = false;
-            DataManager.PonterChnaged = false;
+            DataManager.timer = 70;
             return Ok(new { Message = "Request Completed" });
         }
 
